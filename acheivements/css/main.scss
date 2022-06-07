@@ -1,0 +1,14 @@
+@import "mixins.scss";
+@import "variables.scss";
+@import "dynamic_ui.scss";
+@import "./states/acheivements.scss";
+
+.noticesDiv {
+    z-index: 900;
+    position: absolute;
+    bottom: 1.2em;
+    right: 1.2em;
+    max-width: 24em;
+    width: 30%;
+    height: 8em;
+}

@@ -1,0 +1,113 @@
+#state_AchievementsState {
+    .mainContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    > .headerBar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+
+        > h1 {
+            justify-self: start;
+        }
+    }
+
+    .noAchiev {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        flex-direction: column;
+    }
+
+    .incomplete {
+        opacity: 0.2;
+    }
+    .achievStats {
+        @include PlainText;
+        color: $accentColorDark;
+
+        &.noAchievements {
+            @include S(width, 400px);
+            align-self: center;
+            justify-self: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include Text;
+            @include S(margin-top, 100px);
+            color: lighten($accentColorDark, 15);
+
+            button {
+                @include S(margin-top, 10px);
+                @include S(padding, 10px, 20px);
+            }
+
+            &::before {
+                @include S(margin-bottom, 15px);
+                content: "";
+                @include S(width, 50px);
+                @include S(height, 50px);
+                background-position: center center;
+                background-size: contain;
+                opacity: 0.2;
+            }
+            &::before {
+                /* @load-async */
+                background-image: uiResource("res/ui/icons/mods.png") !important;
+            }
+        }
+    }
+
+    .achievList {
+        @include S(margin-top, 10px);
+        overflow-y: scroll;
+        pointer-events: all;
+        @include S(padding-right, 5px);
+        flex-grow: 1;
+
+        .achiev {
+            @include S(border-radius, $globalBorderRadius);
+            background: #eeeff4;
+            @include S(margin-bottom, 4px);
+            @include S(padding, 7px, 10px);
+            @include S(grid-gap, 15px);
+            display: grid;
+            grid-template-columns: 64px .7fr .3fr;
+
+            @include DarkThemeOverride {
+                background: darken($darkModeControlsBackground, 5);
+            }
+
+            .checkbox {
+                align-self: center;
+                justify-self: center;
+            }
+
+            .mainInfo {
+                display: flex;
+                flex-direction: column;
+
+                .description {
+                    @include PlainText;
+                    @include S(margin-top, 5px);
+                    color: $accentColorDark;
+                }
+            }
+
+            .achievModName {
+                display: flex;
+                flex-direction: column;
+                align-self: center;
+                strong {
+                    text-transform: uppercase;
+                    color: $accentColorDark;
+                    @include SuperSmallText;
+                }
+            }
+        }
+    }
+}

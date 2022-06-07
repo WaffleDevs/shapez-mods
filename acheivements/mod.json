@@ -1,0 +1,13 @@
+{
+    "entry": "main.js",
+    "id": "achievements-lib",
+    "version": "1.0.0",
+    "name": "Achievements Library",
+    "author": "Wafflesdeff",
+    "description": "Allows mods to easily make achievement systems that don't interfere with other mods.",
+    "website": "https://shapez.mod.io/achievement-lib",
+    "settings": {
+        "completedAchievements": []
+    },
+    "disabled": false
+}
